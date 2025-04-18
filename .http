@@ -1,0 +1,57 @@
+POST http://localhost:3000/api/register
+Content-Type: application/json
+
+{
+  "first_name": "Abril",
+  "last_name": "lorincz",
+  "email":"lorincz@test126.com",
+  "password":"2152112322232",
+  "phone":"123928913"
+}
+###
+POST http://localhost:3000/api/user/login
+Content-Type: application/json
+
+{
+    "email":"lorincz@test126.com",
+    "password":"2152112322232"
+}
+###
+POST http://localhost:3000/api/product/addProduct
+Content-Type: application/json
+
+{
+  "name": "Coca-Cola",
+  "price": 25.99,
+  "description": "Coca-Cola Zero Sugar",
+  "stock": 25
+}
+
+###
+POST http://localhost:3000/api/order/createOrder
+Content-Type: application/json
+Cookie: access_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NTMsImVtYWlsIjoibG9yaW5jekB0ZXN0MTI2LmNvbSIsImZpcnN0X25hbWUiOiJBYnJpbCIsImxhc3RfbmFtZSI6ImxvcmluY3oiLCJwaG9uZSI6IjEyMzkyODkxMyIsImlhdCI6MTc0NDkzODM3MywiZXhwIjoxNzQ0OTQxOTczfQ.AeNlUTh5L9Ko2MUcm_70q4onB-QLtQgBwdXSMHBi2SU
+
+{
+  "order_date": "2026-10-25 04:00:00",
+  "items": [
+    {
+      "product_id": 40, 
+      "quantity": 4
+    },
+    {
+      "product_id": 41,
+      "quantity": 3
+    }
+  ]
+}
+###
+POST http://localhost:3000/api/payment/create
+Content-Type: application/json
+Cookie: access_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NTMsImVtYWlsIjoibG9yaW5jekB0ZXN0MTI2LmNvbSIsImZpcnN0X25hbWUiOiJBYnJpbCIsImxhc3RfbmFtZSI6ImxvcmluY3oiLCJwaG9uZSI6IjEyMzkyODkxMyIsImlhdCI6MTc0NDk0MjI5OSwiZXhwIjoxNzQ0OTQ1ODk5fQ.9S9fdEaQhzSQqtfU2I8C6o6f6ErvEt9UiVzDH2xaWAg
+
+{
+  "order_id": 83,
+  "payment_date": "2026-10-25 04:00:00",
+  "method": "credit_card"
+}
