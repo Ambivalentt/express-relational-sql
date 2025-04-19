@@ -55,3 +55,13 @@ Cookie: access_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NTMsImVtYWlsIj
   "payment_date": "2026-10-25 04:00:00",
   "method": "credit_card"
 }
+
+###
+POST http://localhost:3000/api/cancelOrder/create
+Content-Type: application/json
+Cookie: access_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NTMsImVtYWlsIjoibG9yaW5jekB0ZXN0MTI2LmNvbSIsImZpcnN0X25hbWUiOiJBYnJpbCIsImxhc3RfbmFtZSI6ImxvcmluY3oiLCJwaG9uZSI6IjEyMzkyODkxMyIsImlhdCI6MTc0NTAyMjQ1OCwiZXhwIjoxNzQ1MDI2MDU4fQ.VKUtfjSxhiFDWadVI1-0NLSQHQUR0c_v4Wcjam-ndKI
+
+{
+  "order_id": 8123,
+  "reason": "Customer requested cancellation"
+}

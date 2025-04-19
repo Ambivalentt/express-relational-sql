@@ -6,10 +6,11 @@ const cookies = require('cookie-parser');
 const productRouter = require('./src/modules/products/productRouter.js')
 const orderRouter = require('./src/modules/orders/orderRouter.js')
 const paymentRouter = require('./src/modules/payments/paymentRourter.js')
+const cancelRouter = require('./src/modules/cancel_order/cancelRouter.js')
 
 app.use(cookies());
 app.use(express.json());
-
+app.use('/api/cancelOrder', cancelRouter)
 app.use('/api/product', productRouter)
 app.use('/api/user', userRouter);
 app.use('/api/order', orderRouter)

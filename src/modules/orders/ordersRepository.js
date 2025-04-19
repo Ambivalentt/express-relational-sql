@@ -18,6 +18,7 @@ class OrdersRepository {
         }
         const query = "INSERT INTO orders (customer_id, order_date, total_amount) VALUES (?, ?, ?)"
         const [result] = await db.promise().query(query, [customer_id, order_date, total_amount]);
+        
         return {userID:result.insertId, products, total_amount}
     }
 }
